@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const http = require('http');
 
 function makeRequest(method, path, body = null, token = null) {
@@ -43,3 +44,31 @@ async function run() {
     }
 }
 run();
+=======
+const http = require('http');
+
+const postData = JSON.stringify({
+    name: 'Gaming Mouse',
+    price: 29.99,
+    description: 'High precision optical mouse'
+});
+
+const options = {
+    hostname: 'localhost',
+    port: 3000,
+    path: '/products',
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData)
+    }
+};
+
+const req = http.request(options, (res) => {
+    console.log(`Status Code: ${res.statusCode}`);
+    res.pipe(process.stdout);
+});
+
+req.write(postData);
+req.end();
+>>>>>>> bfc61208343fd448e054cbf3128132d7bf2e693c

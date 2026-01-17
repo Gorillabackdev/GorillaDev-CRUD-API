@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 {
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6"
   },
   "exclude": ["node_modules"]
+=======
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6"
+  },
+  "exclude": ["node_modules"]
+>>>>>>> bfc61208343fd448e054cbf3128132d7bf2e693c
 }
