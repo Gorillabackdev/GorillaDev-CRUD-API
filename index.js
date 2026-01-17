@@ -4,7 +4,12 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const app = express();
 const port = process.env.PORT || 3000;
-const JWT_SECRET = process.env.JWT_SECRET || '08033632300';
+
+if (!process.env.JWT_SECRET) {
+    console.error('FATAL ERROR: JWT_SECRET is not defined in .env file');
+    process.exit(1);
+}
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
